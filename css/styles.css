@@ -127,6 +127,11 @@ header .logo {
   color: var(--cloud);
 }
 
+.menu-item {
+  display: flex;
+  flex-direction: column;
+}
+
 .menu-link {
   text-decoration: none;
   color: var(--navy-blue);
@@ -134,10 +139,9 @@ header .logo {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  margin-top: 24px;
-  display: flex;
-  flex-direction: column;
   position: relative;
+  margin-top: 24px;
+  padding-bottom: 24px;
 }
 
 .menu-link:hover,
@@ -150,7 +154,6 @@ header .logo {
   background-color: var(--ocean);
   border-radius: 2px;
   height: 4px;
-  margin-top: 20px;
   width: 100%;
   position: absolute;
   left: 0;
