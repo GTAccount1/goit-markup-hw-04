@@ -82,6 +82,7 @@ a {
   border-bottom: 1px solid var(--cornflower);
   position: sticky;
   top: -1px;
+  z-index: 100;
   background-color: var(--white);
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
@@ -134,25 +135,23 @@ header .logo {
 
 .menu-link {
   text-decoration: none;
-  color: var(--ocean);
+  color: var(--textcolor);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   position: relative;
-  margin-top: 24px;
+  padding-top: 24px;
   padding-bottom: 24px;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.menu-link:hover,
-.menu-link:focus {
+.menu-item:first-child .menu-link {
   color: var(--ocean);
 }
 
-.menu-link::after {
+.menu-item .menu-link::after {
   content: "";
-  background-color: var(--ocean);
   border-radius: 2px;
   height: 4px;
   width: 100%;
@@ -160,6 +159,26 @@ header .logo {
   left: 0;
   bottom: -1px;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.menu-item:first-child .menu-link::after {
+  background-color: var(--ocean);
+}
+
+.menu-item:nth-child(2) .menu-link::after,
+.menu-item:nth-child(3) .menu-link::after {
+  background-color: inherit;
+}
+
+.menu-item:nth-child(2) .menu-link:hover,
+.menu-item:nth-child(3) .menu-link:hover,
+.menu-item:nth-child(2) .menu-link:after,
+.menu-item:nth-child(3) .menu-link:after {
+  color: var(--ocean);
+}
+
+.menu-item:nth-child(2) .menu-link:hover::after,
+.menu-item:nth-child(3) .menu-link:hover::after {
+  background-color: var(--ocean);
 }
 
 .contacts {
@@ -191,7 +210,7 @@ header .logo {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url("../images/main/people-office-1.jpeg");
+    url("../images/main/people-office-1.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -328,6 +347,7 @@ header .logo {
   letter-spacing: 0.02em;
   color: var(--slate);
   text-align: center;
+  margin-bottom: 8px;
 }
 
 .socials-list {
@@ -335,7 +355,6 @@ header .logo {
   display: flex;
   justify-content: center;
   gap: 24px;
-  margin-top: 8px;
 }
 
 .icon-background {
